@@ -1,10 +1,10 @@
 <script setup>
-import HomeCategory from './components/HomeCategory.vue';
+import HomeBanner from './components/HomeBanner.vue';
 
 </script>
 
 <template>
-  <HomeCategory></HomeCategory>
+  <HomeBanner></HomeBanner>
 </template>
 
 <style></style>
