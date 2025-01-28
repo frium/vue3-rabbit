@@ -66,6 +66,8 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .show {
+  margin-top: 10px;
+
   .container {
     display: flex;
     justify-content: space-between;

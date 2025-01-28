@@ -24,7 +24,6 @@ const categoryStore = useCategoryStore();
 <style scoped lang="scss">
 .category-list {
   height: 400px;
-  width: 18vw;
   background-color: rgba(34, 31, 31);
   opacity: 0.8;
 

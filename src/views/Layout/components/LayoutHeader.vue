@@ -27,8 +27,12 @@ const categoryStore = useCategoryStore();
 
   position: sticky;
   top: 0;
+  z-index: 100000;
+
+
 
   .container {
+    background: rgb(245, 245, 245);
     display: flex;
     align-items: center;
     justify-content: space-between;

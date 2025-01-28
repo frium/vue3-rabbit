@@ -6,8 +6,6 @@ const images = ref([])
 const getBanner = async () => {
   const res = await getBannerAPI();
   images.value = res.result;
-  console.log(images);
-
 }
 onMounted(() => {
   getBanner();
@@ -32,13 +30,14 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .container {
+  margin-top: 10px;
   position: relative;
 
   .category-list {
     position: absolute;
     top: 0;
     left: 0;
-    width: 18vw;
+    width: 270px;
     height: 100%;
     z-index: 1;
   }
