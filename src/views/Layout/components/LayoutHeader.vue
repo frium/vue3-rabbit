@@ -1,28 +1,21 @@
 <script setup>
-import { getCategoryAPI } from '@/apis/layout';
-import { ref, onMounted } from 'vue';
+import { Search } from '@element-plus/icons-vue'
 import { RouterLink } from 'vue-router';
-
-const categoryList = ref([]);
-const getCategory = async () => {
-  const res = await getCategoryAPI();
-  categoryList.value = res.result;
-}
-onMounted(() => {
-  getCategory()
-})
+import { useCategoryStore } from '@/stores/category';
+const categoryStore = useCategoryStore();
 </script>
 
 <template>
-  <div class="container">
-    <img src="@/assets/images/logo.png" alt="">
-    <ul>
-      <li v-for="category in categoryList" :Key="category.id">
-        <RouterLink to="/">{{ category.name }}</RouterLink>
-      </li>
-    </ul>
-    <el-input v-model="input2" style="width: 240px" placeholder="select" :suffix-icon="Search" />
-
+  <div class="header-sticky">
+    <div class="container">
+      <img src="@/assets/images/logo.png" alt="">
+      <ul>
+        <li v-for="category in categoryStore.categoryList" :Key="category.id">
+          <RouterLink to="/">{{ category.name }}</RouterLink>
+        </li>
+      </ul>
+      <el-input v-model="input2" style="width: 240px" placeholder="select" :suffix-icon="Search" />
+    </div>
   </div>
 
 
@@ -30,26 +23,32 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.header-sticky {
 
-  ul {
+  position: sticky;
+  top: 0;
+
+  .container {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    margin-right: 28vw;
+    justify-content: space-between;
 
-    li {
-      font-size: 14px;
-      margin: 15px;
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-right: 15vw;
+
+      li {
+        font-size: 14px;
+        margin: 15px;
+      }
+
     }
 
-  }
-
-  img {
-    width: 10vw;
+    img {
+      width: 10vw;
+    }
   }
 }
 </style>
