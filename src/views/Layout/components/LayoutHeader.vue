@@ -11,7 +11,7 @@ const categoryStore = useCategoryStore();
       <img src="@/assets/images/logo.png" alt="">
       <ul>
         <li v-for="category in categoryStore.categoryList" :Key="category.id">
-          <RouterLink to="/">{{ category.name }}</RouterLink>
+          <RouterLink :to="`/category/${category.id}`">{{ category.name }}</RouterLink>
         </li>
       </ul>
       <el-input v-model="input2" style="width: 240px" placeholder="select" :suffix-icon="Search" />

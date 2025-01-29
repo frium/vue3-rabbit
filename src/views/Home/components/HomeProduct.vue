@@ -6,7 +6,6 @@ const goodsObject = ref({})
 const getGoods = async () => {
   const res = await getGoodsAPI();
   goodsObject.value = res.result[0];
-  console.log(goodsObject.value);
 }
 onMounted(() => {
   getGoods();

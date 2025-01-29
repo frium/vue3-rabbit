@@ -6,8 +6,6 @@ const propose = defineProps({
   }
 })
 
-console.log(propose.goods);
-
 </script>
 
 <template>
