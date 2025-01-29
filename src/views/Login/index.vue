@@ -1,5 +1,5 @@
 <template>
-  登录
+  <span>登录</span>
 </template>
 
 <script setup>
