@@ -11,10 +11,10 @@ defineProps({
 
 <template>
   <div class="image">
-    <img v-img-lazy="goods.picture" :src=goods.picture alt="">
+    <img :src=goods.picture alt="">
 
     <span>{{ goods.name }}</span>
-    <span>{{ goods.price }}</span>
+    <span v-if="goods.price">{{ goods.price + '&nbsp;$' }}</span>
   </div>
 </template>
 

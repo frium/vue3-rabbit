@@ -6,8 +6,6 @@ const hotGoods = ref([]);
 const getHotGoods = async () => {
   const res = await getHotGoodsAPI();
   hotGoods.value = res.result;
-  console.log(hotGoods.value);
-
 }
 onMounted(() => {
   getHotGoods()
@@ -15,7 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <HomeGoodsShow v-if="!isLoading" :goodsArray="hotGoods" :title="'火爆商品'" :smallTitle="'真火爆'"></HomeGoodsShow>
+  <HomeGoodsShow :goodsArray="hotGoods" :title="'火爆商品'" :smallTitle="'真火爆'"></HomeGoodsShow>
 
 
 </template>

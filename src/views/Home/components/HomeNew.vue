@@ -6,8 +6,6 @@ const newGoods = ref([]);
 const getNewGoods = async () => {
   const res = await getNewGoodsAPI();
   newGoods.value = res.result;
-  console.log(newGoods.value);
-
 }
 onMounted(() => {
   getNewGoods()
@@ -15,7 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <HomeGoodsShow v-if="!isLoading" :goodsArray="newGoods" :title="'新鲜好物'" :smallTitle="'真新鲜'"></HomeGoodsShow>
+  <HomeGoodsShow :goodsArray="newGoods" :title="'新鲜好物'" :smallTitle="'真新鲜'"></HomeGoodsShow>
 </template>
 
 <style scoped></style>

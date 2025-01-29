@@ -1,20 +1,24 @@
 import { useIntersectionObserver } from '@vueuse/core'
 
-//懒加载
 export const lazyPlugin = {
   install(app) {
-    //定义全局指令
-    app.directive('img-lazy', {
-      mounted(el, binding) {
-        const { stop } = useIntersectionObserver(el, ([entry]) => {
-          if (entry.isIntersecting) {
-            el.src = binding.value;
-            stop();
-          }
-        });
+    app.directive('lazy', {
+      mounted(el) {
+        if (!el.dataset.lazy) { // 避免重复处理
+          el.dataset.lazy = 'true';
+          const src = el.getAttribute('src');
+          el.setAttribute('data-src', src);
+          el.removeAttribute('src'); // 移除 src
+          el.src = ''; // 占位图
+
+          const { stop } = useIntersectionObserver(el, ([entry]) => {
+            if (entry.isIntersecting) {
+              el.src = el.getAttribute('data-src'); // 加载真正的图片
+              stop();
+            }
+          });
+        }
       }
     });
-
-
   }
 }
