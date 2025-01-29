@@ -6,13 +6,12 @@ defineProps({
   }
 
 })
-console.log(43123);
 
 </script>
 
 <template>
   <div class="image">
-    <img :src=goods.picture alt="">
+    <img v-img-lazy="goods.picture" :src=goods.picture alt="">
 
     <span>{{ goods.name }}</span>
     <span>{{ goods.price }}</span>
