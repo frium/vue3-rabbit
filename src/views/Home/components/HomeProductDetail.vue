@@ -19,6 +19,7 @@ const propose = defineProps({
 
 <style scoped lang="scss">
 .detail {
+  margin-top: 5px;
   width: 200px;
 
   &:hover {

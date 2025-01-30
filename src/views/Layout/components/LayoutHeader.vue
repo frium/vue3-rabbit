@@ -11,7 +11,7 @@ const categoryStore = useCategoryStore();
       <img src="@/assets/images/logo.png" alt="">
       <ul>
         <li v-for="category in categoryStore.categoryList" :Key="category.id">
-          <RouterLink :to="`/category/${category.id}`">{{ category.name }}</RouterLink>
+          <RouterLink active-class="active" :to="`/category/${category.id}`">{{ category.name }}</RouterLink>
         </li>
       </ul>
       <el-input v-model="input2" style="width: 240px" placeholder="select" :suffix-icon="Search" />
@@ -37,6 +37,11 @@ const categoryStore = useCategoryStore();
     align-items: center;
     justify-content: space-between;
 
+    .active {
+      color: $xtxColor;
+      border-bottom: 1px solid $xtxColor;
+    }
+
     ul {
       display: flex;
       justify-content: flex-start;
@@ -44,6 +49,7 @@ const categoryStore = useCategoryStore();
       margin-right: 15vw;
 
       li {
+        white-space: nowrap;
         font-size: 14px;
         margin: 15px;
       }

@@ -8,3 +8,12 @@ export function getCategoryAPI(id) {
     }
   })
 }
+
+export const getCategoryListAPI = (data) => {
+  return httpInstance({
+    url: '/category/goods/temporary',
+    method: 'POST',
+    data
+  })
+
+}
