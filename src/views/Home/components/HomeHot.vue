@@ -15,7 +15,6 @@ onMounted(() => {
 <template>
   <HomeGoodsShow :goodsArray="hotGoods" :title="'火爆商品'" :smallTitle="'真火爆'"></HomeGoodsShow>
 
-
 </template>
 
 <style scoped></style>

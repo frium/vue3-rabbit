@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted } from 'vue';
 import HomeGoodsImageShow from './HomeGoodsImageShow.vue';
 const propos = defineProps({
   title: {
@@ -29,7 +28,10 @@ const propos = defineProps({
     </div>
     <a href=""></a>
     <div class="images">
-      <HomeGoodsImageShow v-for="goods in goodsArray" :key="goods.id" :goods="goods"></HomeGoodsImageShow>
+      <RouterLink v-for="goods in goodsArray" :key="goods.id" :to="`/detail/${goods.id}`">
+        <HomeGoodsImageShow :goods="goods"></HomeGoodsImageShow>
+      </RouterLink>
+
     </div>
   </div>
 </template>

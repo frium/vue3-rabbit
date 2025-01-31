@@ -4,6 +4,7 @@ import Home from '@/views/Home/index.vue'
 import Category from '@/views/Category/index.vue'
 import SubCategory from '@/views/Category/components/SubCategory.vue'
 import CategoryHomePage from '@/views/Category/components/CategoryHomePage.vue'
+import Detail from '@/views/Detail/index.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 
@@ -31,6 +32,10 @@ const router = createRouter({
               component: SubCategory
             }
           ]
+        },
+        {
+          path: 'detail/:detailId',
+          component: Detail
         }
       ]
     },
